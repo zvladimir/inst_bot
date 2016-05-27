@@ -253,7 +253,7 @@ class Instagram(object):
                  'dimensions+%7B%0A++++++height%2C%0A++++++width%0A++++%7D%2C%0A++++display_src%2C%0A++++id%2C%0A++++'
                  'is_video%2C%0A++++likes+%7B%0A++++++count%0A++++%7D%2C%0A++++owner+%7B%0A++++++id%0A++++%7D%2C%0A++++'
                  'thumbnail_src%0A++%7D%2C%0A++page_info%0A%7D%0A+%7D&'
-                 'ref=tags%3A%3Ashow').format(tag = tag, media_after = media_after)
+                 'ref=tags%3A%3Ashow').format(tag = urllib.parse.quote(tag), media_after = media_after)
                 )
             if data != False:
                 media_after = data['media']['page_info']['end_cursor']
